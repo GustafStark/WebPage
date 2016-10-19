@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <section class="navbar-wrapper">
+        <article class="container">
+            <nav class="navbar navbar-inverse navbar-static-top">
+                <article class="container">
+                    <article class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class=sr-only>Navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">HRM Enginnering</a>
+                    </article>
+                    <article id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li @Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Career", "Career", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true">Our expertise<span class="caret"> </span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Blå bil</a></li>
+                                    <li><a href="#">Röd bil</a></li>
+                                    <li><a href="#">Svart bil</a></li>
+                                    <li><a href="#">Vit bil</a></li>
+                                </ul>
+                            </li>
+                            @{
+                                if (Context.User.Identity.IsAuthenticated)
+                                {
+                                    <li>@Html.ActionLink("Edit News", "Index", "Posts")</li>
+                                }
+                            }
+                        </ul>
+                        @Html.Partial("_LoginPartial")
+                    </article>
+                    
+                </article>
+            </nav>
+        </article>
+    </section>
+    
+    </div>
+    </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - HRM Engineering</p>
+
+        <a href="# " target=" " title="Följ oss på Twitter "><img src="//login.create.net/images/icons/user/twitter_30x30.png " alt=" "></a>
+        <a href="# " target=" " title="Hitta oss på Facebook "><img src="http://www.delaval-us.com/ImageVaultFiles/id_25591/cf_5/st_edited/28jfZyRUzEQR_UwmzHji.jpg " alt=" "></a>
+        <a href="# " target=" " title="Se oss på Instagram "><img src="https://main.transportation.ucla.edu/instagramlogo.jpg/image_preview " alt=" "></a>
+        <a href="# " target=" " title="See oss på Google "><img src="http://i871.photobucket.com/albums/ab271/antemma_123/GooglePlus128GlossRed30x30.png " alt=" "></a>
+        <a href="# " target=" " title="HRM på Linkedin "><img src="http://www.statuslabs.com/wp-content/themes/statuslabs/img/lnf.png " alt=" "></a>
+
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+
